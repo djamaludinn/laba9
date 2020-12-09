@@ -74,17 +74,15 @@ if __name__ == '__main__':
 
             print(line)
 
+
         elif command.startswith('select '):
-
             parts = command.split(' ', maxsplit=2)
-            # Получить требуемый стаж.
-            period = str(parts[1])
+            sel = (parts[1])
 
-            # Инициализировать счетчик.
             count = 0
-            # Проверить сведения магазина из списка.
             for markets in market:
-                if markets.get('shop') >= period:
+                if markets.get('shop') == sel:
+
                     count += 1
                     print(
                         '{:>4}: {}'.format(count, markets.get('shop', ''))
